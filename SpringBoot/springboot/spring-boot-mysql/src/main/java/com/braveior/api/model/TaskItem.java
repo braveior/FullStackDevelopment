@@ -1,6 +1,4 @@
 package com.braveior.api.model;
-
-import java.util.Set;
 import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

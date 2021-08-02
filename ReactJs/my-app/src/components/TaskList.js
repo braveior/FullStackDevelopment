@@ -1,32 +1,23 @@
-import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-      width: '100%',
-      maxWidth: 360,
-      backgroundColor: theme.palette.background.paper,
-    },
-  }));
-
-const TaskList = ({ tasks }) => {
-    const classes = useStyles();
+import Box from '@material-ui/core/Box';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+export default function TaskList ({tasks }) {
   return (
-     <div className={classes.root}>
-
-        <List component="nav" aria-label="main mailbox folders"  >
+        <Box p={2}>
+          <Paper>
+          <Typography variant="h6" component="h2">Task List</Typography>
+        <List component="nav" >
         {tasks.map(task => (
-            <ListItem button key={task.taskItemId}>
+            <ListItem button divider key={task.taskItemId}>
                 <ListItemText primary={task.taskName} />
             </ListItem>
-    
           ))}
         </List>
-
-    </div>
+        </Paper>
+        </Box>
   );
 }
  
-export default TaskList;

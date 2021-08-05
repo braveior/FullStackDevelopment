@@ -17,16 +17,12 @@ const useStyles = makeStyles((theme) => ({
 export default function Home () {
   const { error, isPending, data: tasks } = useFetch('http://localhost:8090/api/task/tasks') 
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-  const handleClose = () => {
-    setOpen(false);
-  };
-  
+   
   return (
     <Container maxWidth="sm">
       { error && <div>{ error }</div> }
       { tasks && <TaskList tasks={tasks} /> }
-      <Backdrop className={classes.backdrop} open={isPending} onClick={handleClose}>
+      <Backdrop className={classes.backdrop} open={isPending} >
         <CircularProgress color="inherit" />
       </Backdrop>
       </Container>

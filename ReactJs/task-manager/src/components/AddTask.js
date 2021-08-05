@@ -69,16 +69,14 @@ export default function AddTask () {
  <Typography variant="h6" component="h2">Add Task</Typography>
       <Divider />
       <form onSubmit={handleSubmit}>
-      <Grid container direction="column">
+        <Grid container direction="column">
           <Grid item pb={5}>
-          <Box m={2}><TextField id="outlined-basic" size="small" label="Task name" variant="outlined" required={true} onChange={(e) => setTaskName(e.target.value)}/></Box>
+            <Box m={2}><TextField id="outlined-basic" size="small" label="Task name" variant="outlined" required={true} onChange={(e) => setTaskName(e.target.value)}/></Box>
+          </Grid>
+          <Grid item>
+            <Box m={2}><Button type="submit" variant="outlined" className={classes.buttonColor} >Submit</Button></Box>
+          </Grid>
         </Grid>
-        <Grid item>
-        <Box m={2}><Button type="submit" variant="outlined" className={classes.buttonColor} >Submit</Button></Box>
-        </Grid>
-        
-
-      </Grid>
       </form>
      </Paper>
      </Box>

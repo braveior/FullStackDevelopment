@@ -39,7 +39,6 @@ namespace Braveior.FullStack.TaskManager.API
             {
                 gen.SwaggerDoc("v1.0", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Task Manager API", Version = "v1.0" });
             });
-            services.AddAutoMapper(typeof(Startup)); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

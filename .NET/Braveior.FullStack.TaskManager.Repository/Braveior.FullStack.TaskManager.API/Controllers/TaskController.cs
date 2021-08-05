@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-using Braveior.FullStack.TaskManager.API.DTO;
-using Braveior.FullStack.TaskManager.Repository.Models;
+﻿using Braveior.FullStack.TaskManager.Repository.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -14,10 +12,9 @@ namespace Braveior.FullStack.TaskManager.API.Controllers
     [Route("[controller]")]
     public class TaskController : ControllerBase
     {
-        private readonly IMapper _mapper;
-        public TaskController(IMapper mapper)
+        public TaskController()
         {
-            _mapper = mapper;
+
         }
 
         [HttpGet("getTasks")]
@@ -26,17 +23,13 @@ namespace Braveior.FullStack.TaskManager.API.Controllers
             using (var db = new taskmanagerContext())
             {
                 var tasks = db.Taskitems.ToList();
-                return Ok(_mapper.Map<List<TaskItemDTO>>(tasks));
+                return Ok(tasks);
             }
         }
 
         [HttpPost("addTask")]
-        public IActionResult AddTask(TaskItemDTO taskItemDTO)
+        public IActionResult AddTask(Taskitem newTask)
         {
-            Taskitem newTask = new Taskitem()
-            {
-                TaskName = taskItemDTO.TaskName,
-            };
             using (var db = new taskmanagerContext())
             {
                 db.Taskitems.Add(newTask);

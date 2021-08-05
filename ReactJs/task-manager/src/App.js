@@ -9,10 +9,8 @@ import AddTask from './components/AddTask'
 import Home from './components/Home'
 import { Link } from 'react-router-dom'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
+const useStyles = makeStyles(() => ({
+
   appbarColor: {
     background : 'black',
   },
@@ -21,14 +19,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar() {
-
-
+export default function App() {
   const classes = useStyles();
-
   return (
     <Router>
-    <div className={classes.root}>
       <AppBar className={classes.appbarColor} position="static">
         <Toolbar >
           <Grid container>
@@ -46,7 +40,6 @@ export default function ButtonAppBar() {
           </Grid>
         </Toolbar>
       </AppBar>
-    </div>
     <Switch>
     <Route path='/addtask' component={AddTask} />
     <Route path='/' component={Home} />

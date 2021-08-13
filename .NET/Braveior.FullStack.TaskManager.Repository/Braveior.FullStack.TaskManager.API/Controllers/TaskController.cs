@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Braveior.FullStack.TaskManager.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class TaskController : ControllerBase
     {
         TaskManagerContext _context;
@@ -18,14 +18,14 @@ namespace Braveior.FullStack.TaskManager.API.Controllers
             _context = context;
         }
 
-        [HttpGet("getTasks")]
+        [HttpGet("tasks")]
         public IActionResult GetTasks()
         {
                 var tasks = _context.TaskItems.ToList();
                 return Ok(tasks);
         }
 
-        [HttpPost("addTask")]
+        [HttpPost("add")]
         public IActionResult AddTask(TaskItem newTask)
         {
                 _context.TaskItems.Add(newTask);

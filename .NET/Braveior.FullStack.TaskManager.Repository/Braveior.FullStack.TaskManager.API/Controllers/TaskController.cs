@@ -12,6 +12,7 @@ namespace Braveior.FullStack.TaskManager.API.Controllers
     [Route("[controller]")]
     public class TaskController : ControllerBase
     {
+
         public TaskController()
         {
 
@@ -20,22 +21,22 @@ namespace Braveior.FullStack.TaskManager.API.Controllers
         [HttpGet("getTasks")]
         public IActionResult GetTasks()
         {
-            using (var db = new taskmanagerContext())
+            using (var db = new TaskManagerContext())
             {
-                var tasks = db.Taskitems.ToList();
+                var tasks = db.TaskItems.ToList();
                 return Ok(tasks);
             }
         }
 
         [HttpPost("addTask")]
-        public IActionResult AddTask(Taskitem newTask)
+        public IActionResult AddTask(TaskItem newTask)
         {
-            using (var db = new taskmanagerContext())
-            {
-                db.Taskitems.Add(newTask);
-                db.SaveChanges();
+            using (var db = new TaskManagerContext())
+             {
+            db.TaskItems.Add(newTask);
+            db.SaveChanges();
             }
-
+        
             return Ok();
         }
 

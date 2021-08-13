@@ -1,6 +1,8 @@
+using Braveior.FullStack.TaskManager.Repository.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -39,6 +41,8 @@ namespace Braveior.FullStack.TaskManager.API
             {
                 gen.SwaggerDoc("v1.0", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Task Manager API", Version = "v1.0" });
             });
+            services.AddDbContext<TaskManagerContext>(options =>
+               options.UseMySql("server=localhost;user=root;password=password;database=taskmanager_dotnet", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.26-mysql")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,6 +69,11 @@ namespace Braveior.FullStack.TaskManager.API
             {
                 ui.SwaggerEndpoint("/swagger/v1.0/swagger.json", "Entertainment API Endpoint");
             });
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<TaskManagerContext>();
+                context.Database.EnsureCreated();
+            }
         }
     }
 }

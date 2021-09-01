@@ -42,7 +42,7 @@ export default function AddTask () {
     e.preventDefault();
     const task = { taskName };
 
-    fetch('http://localhost:8090/api/task/add', {
+    fetch('http://localhost:28908/api/task/add', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(task)

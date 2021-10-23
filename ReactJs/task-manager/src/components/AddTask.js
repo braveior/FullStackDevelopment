@@ -71,7 +71,7 @@ export default function AddTask () {
       <form onSubmit={handleSubmit}>
         <Grid container direction="column">
           <Grid item pb={5}>
-            <Box m={2}><TextField id="outlined-basic" size="small" label="Task name" variant="outlined" required={true} onChange={(e) => setTaskName(e.target.value)}/></Box>
+            <Box m={2}><TextField size="small" label="Task name" variant="outlined" required={true} onChange={(e) => setTaskName(e.target.value)}/></Box>
           </Grid>
           <Grid item>
             <Box m={2}><Button type="submit" variant="outlined" className={classes.buttonColor} >Submit</Button></Box>

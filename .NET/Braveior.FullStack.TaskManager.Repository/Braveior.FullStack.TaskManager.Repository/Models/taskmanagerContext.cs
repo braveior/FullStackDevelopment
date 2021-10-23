@@ -6,14 +6,14 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Braveior.FullStack.TaskManager.Repository.Models
 {
-    public partial class TaskManagerContext : DbContext
+    public class TaskManagerContext : DbContext
     {
         public TaskManagerContext(DbContextOptions<TaskManagerContext> options)
             : base(options)
         {
         }
 
-        public virtual DbSet<TaskItem> TaskItems { get; set; }
+        public DbSet<TaskItem> TaskItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

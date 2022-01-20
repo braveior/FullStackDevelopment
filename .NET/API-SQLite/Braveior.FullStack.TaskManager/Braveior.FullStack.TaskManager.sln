@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Braveior.FullStack.TaskManager.Repository", "Braveior.FullStack.TaskManager.Repository\Braveior.FullStack.TaskManager.Repository.csproj", "{675A4471-199A-404E-BD68-860BF1D6BAD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Braveior.FullStack.TaskManager.API", "Braveior.FullStack.TaskManager.API\Braveior.FullStack.TaskManager.API.csproj", "{E6F8CF8D-F4A9-42FA-ACEC-9F05B6834487}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{675A4471-199A-404E-BD68-860BF1D6BAD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675A4471-199A-404E-BD68-860BF1D6BAD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675A4471-199A-404E-BD68-860BF1D6BAD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675A4471-199A-404E-BD68-860BF1D6BAD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6F8CF8D-F4A9-42FA-ACEC-9F05B6834487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6F8CF8D-F4A9-42FA-ACEC-9F05B6834487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6F8CF8D-F4A9-42FA-ACEC-9F05B6834487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6F8CF8D-F4A9-42FA-ACEC-9F05B6834487}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EAF71A61-92D2-404B-BFFF-BB855EF0823D}
+	EndGlobalSection
+EndGlobal
